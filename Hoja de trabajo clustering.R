@@ -6,7 +6,11 @@ library(NbClust)
 library(factoextra) 
 setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering")
 datos <- read.csv("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering/data/tmdb-movies.csv")
-
+#Quitamos los datos que no sirven: 
+datos=datos[datos$budget > 1000000  ,]
+datos = datos[datos$popularity != 0,]
+datos = datos[datos$revenue > 1000000,]
+datos= datos[datos$runtime > 30,]
 
 #Para saber cual es el mejor numero de cluste
 Variables_analizar = c("popularity", "budget", "revenue", "runtime" , "vote_count","vote_average")
