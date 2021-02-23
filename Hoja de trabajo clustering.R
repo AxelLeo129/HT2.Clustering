@@ -4,19 +4,16 @@ library(mclust)
 library(fpc) 
 library(NbClust) 
 library(factoextra) 
-<<<<<<< HEAD
-#setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering")
-setwd("D:/AxelFolder/University/mineria_de_datos/HT2.Clustering")
+
+setwd("C:/Users/LENOVO/Desktop/Clases/Minerï¿½a de datos/HT2/HT2.Clustering")
+#setwd("D:/AxelFolder/University/mineria_de_datos/HT2.Clustering")
 datos <- read.csv("data/tmdb-movies.csv")
-=======
-setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering")
-datos <- read.csv("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering/data/tmdb-movies.csv")
+
 #Quitamos los datos que no sirven: 
 datos=datos[datos$budget > 1000000  ,]
 datos = datos[datos$popularity != 0,]
 datos = datos[datos$revenue > 1000000,]
 datos= datos[datos$runtime > 30,]
->>>>>>> 63b4aacb8f650d2e069794b834c1b12a29acdb4a
 
 #Para saber cual es el mejor numero de cluste
 Variables_analizar = c("popularity", "budget", "revenue", "runtime" , "vote_count","vote_average")
