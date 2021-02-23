@@ -5,7 +5,7 @@ library(fpc)
 library(NbClust) 
 library(factoextra) 
 
-setwd("C:/Users/LENOVO/Desktop/Clases/Minerï¿½a de datos/HT2/HT2.Clustering")
+setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering")
 #setwd("D:/AxelFolder/University/mineria_de_datos/HT2.Clustering")
 datos <- read.csv("data/tmdb-movies.csv")
 
@@ -60,3 +60,14 @@ grupo4_HC<-datos[datos$gruposHC==4,]
 fcm<-cmeans(datos_cluster,4)
 datos$gruposFC<-fcm$cluster
 datos<-cbind(datos,fcm$membership)
+
+##### 
+
+silkm<-silhouette(datos_agrupados$cluster,dist(datos[,Variables_analizar]))
+mean(silkm[,3])
+####
+silch<-silhouette(grupos,dist(datos[,Variables_analizar]))
+mean(silch[,3])
+###
+silfcm<-silhouette(fcm$cluster,dist(datos[,Variables_analizar]))
+mean(silfcm[,3])
