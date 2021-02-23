@@ -5,8 +5,8 @@ library(fpc)
 library(NbClust) 
 library(factoextra) 
 
-setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering")
-#setwd("D:/AxelFolder/University/mineria_de_datos/HT2.Clustering")
+#setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/HT2/HT2.Clustering")
+setwd("D:/AxelFolder/University/mineria_de_datos/HT2.Clustering")
 datos <- read.csv("data/tmdb-movies.csv")
 
 #Quitamos los datos que no sirven: 
@@ -42,7 +42,7 @@ prop.table(table(grupo3$vote_average))*100
 grupo4 <- datos[datos$grupo==4,]
 prop.table(table(grupo4$vote_average))*100
 
-plotcluster(datos_cluster,km$cluster)
+plotcluster(datos_cluster,datos_agrupados$cluster)
 
 #Hierarchical clustering
 hc<-hclust(dist(datos_cluster))
